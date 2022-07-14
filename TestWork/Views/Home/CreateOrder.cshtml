@@ -1,0 +1,46 @@
+﻿@model Core.Order
+
+<div class="row">
+    <div class="col-md-5">
+        <form method="post">
+            <h4>Создание нового заказа.</h4>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CitySender"></label>
+                <input asp-for="CitySender" class="form-control" />
+                <span asp-validation-for="CitySender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressSender"></label>
+                <textarea  asp-for="AddressSender" class="form-control"></textarea>
+                <span asp-validation-for="AddressSender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CityReceiver"></label>
+                <input asp-for="CityReceiver" class="form-control" />
+                <span asp-validation-for="CityReceiver" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressReceiver"></label>
+                <textarea asp-for="AddressReceiver" class="form-control"></textarea>
+                <span asp-validation-for="AddressReceiver" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Weight"></label>
+                <input asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateTakeCargo"></label>
+                <input type="date" asp-for="DateTakeCargo" class="form-control" />
+                <span asp-validation-for="DateTakeCargo" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Заказать</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
